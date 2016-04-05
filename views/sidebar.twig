@@ -34,10 +34,11 @@
         {% set appMenuItems = appMenuItems|merge([{
             'route': 'applications',
             'parameters': {'applicationName': app},
-            'text': app
+            'text': app,
+            'active': currentApplication == app
         }]) %}
     {% endfor %}
-    {{ ui_menu.multi('Applications', 'desktop', appMenuItems) }}
+    {{ ui_menu.multi('Applications', 'desktop', appMenuItems, currentApplication is not empty) }}
     {% endif %}
 
   </ul>
