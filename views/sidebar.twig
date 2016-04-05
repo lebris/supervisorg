@@ -17,13 +17,16 @@
 
     {% set serverMenuItems = [] %}
     {% for server in servers %}
+
         {% set serverMenuItems = serverMenuItems|merge([{
             'route': 'servers',
             'parameters': {'serverName': server.name},
-            'text': server.name
+            'text': server.name,
+            'active': currentServer == server.name
         }]) %}
     {% endfor %}
-    {{ ui_menu.multi('Servers', 'server', serverMenuItems) }}
+
+    {{ ui_menu.multi('Servers', 'server', serverMenuItems, currentServer is not empty ) }}
 
     {% if apps is not empty %}
     {% set appMenuItems = [] %}
@@ -31,10 +34,11 @@
         {% set appMenuItems = appMenuItems|merge([{
             'route': 'applications',
             'parameters': {'applicationName': app},
-            'text': app
+            'text': app,
+            'active': currentApplication == app
         }]) %}
     {% endfor %}
-    {{ ui_menu.multi('Applications', 'desktop', appMenuItems) }}
+    {{ ui_menu.multi('Applications', 'desktop', appMenuItems, currentApplication is not empty) }}
     {% endif %}
 
   </ul>

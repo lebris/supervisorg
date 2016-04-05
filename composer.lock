@@ -691,12 +691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silex-spear/adminlte.git",
-                "reference": "6e8f473ffc7fc7efa477fc2f42671e4094573faf"
+                "reference": "d96eab912641b1d821f6fa071e899d0254aab6df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silex-spear/adminlte/zipball/6e8f473ffc7fc7efa477fc2f42671e4094573faf",
-                "reference": "6e8f473ffc7fc7efa477fc2f42671e4094573faf",
+                "url": "https://api.github.com/repos/silex-spear/adminlte/zipball/d96eab912641b1d821f6fa071e899d0254aab6df",
+                "reference": "d96eab912641b1d821f6fa071e899d0254aab6df",
                 "shasum": ""
             },
             "require": {
@@ -715,7 +715,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2016-04-02 16:48:34"
+            "time": "2016-04-05 20:31:57"
         },
         {
             "name": "silex-spear/application",
