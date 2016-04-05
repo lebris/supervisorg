@@ -17,13 +17,16 @@
 
     {% set serverMenuItems = [] %}
     {% for server in servers %}
+
         {% set serverMenuItems = serverMenuItems|merge([{
             'route': 'servers',
             'parameters': {'serverName': server.name},
-            'text': server.name
+            'text': server.name,
+            'active': currentServer == server.name
         }]) %}
     {% endfor %}
-    {{ ui_menu.multi('Servers', 'server', serverMenuItems) }}
+
+    {{ ui_menu.multi('Servers', 'server', serverMenuItems, currentServer is not empty ) }}
 
     {% if apps is not empty %}
     {% set appMenuItems = [] %}

@@ -49,6 +49,7 @@ class Controller
     public function sidebarAction()
     {
         return $this->render('sidebar.twig', [
+            'currentServer' => $this->request->attributes->get('serverName', null),
             'servers' => $this->servers,
             'apps' => $this->retrieveApplications($this->configuration)
         ]);

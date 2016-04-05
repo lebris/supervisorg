@@ -16,7 +16,7 @@
         "oyejorge/less.php" : "~1.7",
         "fortawesome/font-awesome": "~4.3",
         "zendframework/zend-xmlrpc": "^2.5",
-        "silex-spear/adminlte": "dev-master"
+        "silex-spear/adminlte": "dev-fix-menu-active-class"
     },
     "autoload" : {
         "psr-4" : {
