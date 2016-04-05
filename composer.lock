@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a040dcd3f7e0f3064d9e43571072692",
-    "content-hash": "c8c4fcf1d182149e675b5675af326750",
+    "hash": "4f6aa7c4d457d47731d1c092684ea5c2",
+    "content-hash": "185154b4b163e555b1e2f919ae37416c",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -687,16 +687,16 @@
         },
         {
             "name": "silex-spear/adminlte",
-            "version": "dev-fix-menu-active-class",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silex-spear/adminlte.git",
-                "reference": "52ad59a62e111ef7a53e3be56235f801629e87b1"
+                "reference": "d96eab912641b1d821f6fa071e899d0254aab6df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silex-spear/adminlte/zipball/52ad59a62e111ef7a53e3be56235f801629e87b1",
-                "reference": "52ad59a62e111ef7a53e3be56235f801629e87b1",
+                "url": "https://api.github.com/repos/silex-spear/adminlte/zipball/d96eab912641b1d821f6fa071e899d0254aab6df",
+                "reference": "d96eab912641b1d821f6fa071e899d0254aab6df",
                 "shasum": ""
             },
             "require": {
@@ -715,7 +715,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2016-04-05 20:13:24"
+            "time": "2016-04-05 20:31:57"
         },
         {
             "name": "silex-spear/application",
