@@ -1,0 +1,16 @@
+# Dotfiles
+.git
+.dockerignore
+.gitignore
+
+# Dirs
+docker
+
+# Development helpers
+start
+init-rabbitmq
+
+# Karma's files
+.karma
+env
+config/*.yml-dist
