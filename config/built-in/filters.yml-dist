@@ -1,0 +1,12 @@
+global_filters: [plain_hidden_processes, regex_hidden_processes]
+
+filters:
+    regex_hidden_processes:
+        type: regex
+        pattern: "~^poney-ui--stroupilou\.(?:.+)$~"
+
+    plain_hidden_processes:
+        type: plain
+        values:
+            - postfix
+            - apache2

@@ -2,9 +2,6 @@ servers:
     -
         host: server-1
         port: 9001
-#        filters:
-#            process-name:
-#                names: [ apache2 ]
     -
         host: server-2
         port: 9001

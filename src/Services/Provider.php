@@ -36,7 +36,9 @@ class Provider implements ServiceProviderInterface
 
             foreach($logicalGroups as $name => $yamlDefinition)
             {
-                $collection->add(new LogicalGroup($name, $yamlDefinition));
+                $filters = $this->retrieveLogicalGroupFilters($yamlDefinition, $c);
+
+                $collection->add(new LogicalGroup($name, $yamlDefinition, $filters));
             }
 
             return $collection;
@@ -45,6 +47,29 @@ class Provider implements ServiceProviderInterface
         $app['feature.checker'] = $app->share(function($c) {
             return new FeatureChecker($c['configuration']);
         });
+    }
+
+    public function retrieveLogicalGroupFilters(array $definition, Application $app)
+    {
+        $filters = new Processes\FilterCollection();
+        if( ! array_key_exists('filters', $definition))
+        {
+            return $filters;
+        }
+
+        // TODO : ensure is array
+        foreach($definition['filters'] as $filterName)
+        {
+            $serviceName = 'process.filter.' . $filterName;
+            if( ! $app->offsetExists($serviceName))
+            {
+                throw new \LogicException(sprintf('Filter %s not found.', $filterName));
+            }
+
+            $filters->addFilter($app[$serviceName]);
+        }
+
+        return $filters;
     }
 
     public function boot(Application $app)
