@@ -1,8 +1,22 @@
 # Usage
 
-Avoid directories owned by `www-data` on your host machine by mapping your user and group id to `www-data` in the container.
+## Install the application
+
+Make sure to install dependencies and run the `start` helper to build the application requirements (less, assets, etc).
+
+## Build images
 
 ```
-$ cd images/php && make && cd ../..
-$ USER_ID=$(id -u) GROUP_ID=$(id -g) WEB_PORT=80 RMQ_PORT=15672 docker-compose up -d
+$ cd images
+$ ./build_all_images.sh
 ```
+
+## Run the demo
+
+```
+$ ./start_env.sh
+```
+
+Options :
+ * `--web-port` : port to publish to reach the supervisorg web interface, default to **80**
+ * `--rmq-port` : port to publish to reach the rabbitmq web interface default to **15672**
