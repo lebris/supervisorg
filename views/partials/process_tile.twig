@@ -63,7 +63,7 @@
                     <a href="{{ path('process.stop', {serverName: process.server.name, processName: process.name})}}" class="btn btn-xs btn-danger">
                         <i class="fa fa-stop"></i>
                     </a>
-                {% elseif process.statename in ['STOPPED', 'FATAL'] %}
+                {% elseif process.statename in ['EXITED', 'STOPPED', 'FATAL'] %}
                     <a href="{{ path('process.start', {serverName: process.server.name, processName: process.name})}}" class="btn btn-xs btn-default">
                         <i class="fa fa-play"></i>
                     </a>
