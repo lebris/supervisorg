@@ -3,8 +3,8 @@ logicalGroups:
         defaultView: true
         icon: desktop
         regex: "(?P<groupValue>.+)--(?P<process>.+)"
-        filters: [regex_hidden_processes]
+        # filters: [regex_hidden_processes]
     animals:
         icon: object-ungroup
         regex: "(.+)--(?P<groupValue>.+)-(?P<process>.+)"
-        filters: [regex_hidden_processes]
+        # filters: [regex_hidden_processes]
