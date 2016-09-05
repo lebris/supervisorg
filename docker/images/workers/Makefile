@@ -1,4 +1,4 @@
-NAME=supervisorg/supervisorg
+NAME=supervisorg/base-workers
 TAG?=latest
 
 all:

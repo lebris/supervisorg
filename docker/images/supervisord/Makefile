@@ -1,4 +1,4 @@
-NAME=supervisorg/demo/php-apache
+NAME=supervisorg/dev/supervisord
 
 all:
 	docker build --force-rm -t $(NAME) .

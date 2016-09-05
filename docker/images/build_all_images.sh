@@ -13,7 +13,7 @@ for i in "$@"; do
   esac
 done
 
-for i in php php-apache workers supervisord; do
+for i in supervisorg workers supervisord packager; do
   cd $i
   make ${NO_CACHE}
   cd -

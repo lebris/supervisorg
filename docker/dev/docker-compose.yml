@@ -1,10 +1,8 @@
 version: '2'
-
 services:
     dashboard:
-        build: ./images/php-apache
-        image: supervisorg/demo/php-apache
-        container_name: supervisorg-demo-dashboard
+        image: supervisorg/base-supervisorg
+        container_name: supervisorg-dev-dashboard
         volumes:
             - ./config/apache2/vhost.conf:/etc/apache2/sites-enabled/vhost.conf
             - ../../:/var/www/supervisorg
@@ -21,9 +19,8 @@ services:
             - GROUP_ID=${GROUP_ID}
 
     workers:
-        build: ./images/workers
-        image: supervisorg/demo/workers
-        container_name: supervisorg-demo-workers
+        image: supervisorg/base-workers
+        container_name: supervisorg-dev-workers
         volumes:
             - ./config/apache2/vhost.conf:/etc/apache2/sites-enabled/vhost.conf
             - ./config/supervisor/supervisorg-workers.conf:/etc/supervisor/conf.d/server.conf
@@ -45,22 +42,19 @@ services:
           - "${RMQ_PORT}:15672"
 
     server-1:
-        build: ./images/supervisord
-        image: supervisorg/demo/supervisord
-        container_name: supervisorg-demo-server-1
+        image: supervisorg/dev/supervisord
+        container_name: supervisorg-dev-server-1
         volumes:
             - ./config/supervisor/server-1.conf:/etc/supervisor/conf.d/server.conf
 
     server-2:
-        build: ./images/supervisord
-        image: supervisorg/demo/supervisord
-        container_name: supervisorg-demo-server-2
+        image: supervisorg/dev/supervisord
+        container_name: supervisorg-dev-server-2
         volumes:
             - ./config/supervisor/server-2.conf:/etc/supervisor/conf.d/server.conf
 
     server-3:
-        build: ./images/supervisord
-        image: supervisorg/demo/supervisord
-        container_name: supervisorg-demo-server-3
+        image: supervisorg/dev/supervisord
+        container_name: supervisorg-dev-server-3
         volumes:
             - ./config/supervisor/server-3.conf:/etc/supervisor/conf.d/server.conf

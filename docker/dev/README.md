@@ -7,7 +7,7 @@ Make sure to install dependencies and run the `start` helper to build the applic
 ## Build images
 
 ```
-$ cd images
+$ cd /path/to/supervisorg/docker/images
 $ ./build_all_images.sh
 ```
 

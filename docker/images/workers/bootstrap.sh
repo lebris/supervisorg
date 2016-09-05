@@ -8,6 +8,4 @@ if [ "$USER_ID" -ne 33 ] || [ "$GROUP_ID" -ne 33 ]; then
     usermod --uid $USER_ID --gid $GROUP_ID www-data
 fi
 
-chown -Rf www-data:www-data /var/www/app
-
-/usr/bin/supervisord
+exec "$@"
