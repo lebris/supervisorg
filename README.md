@@ -7,7 +7,7 @@ A dashboard for supervisord.
 ## Installation
 
 ```shell
-$ git clone https://github.com/lebris/supervisorg.git supervisorg
+$ git clone https://github.com/supervisorg/supervisorg.git supervisorg
 $ cd supervisorg
 $ php composer.phar install
 $ ./start
