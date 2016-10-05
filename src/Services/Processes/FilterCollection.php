@@ -2,6 +2,8 @@
 
 namespace Supervisorg\Services\Processes;
 
+use Supervisorg\Domain\Process;
+
 class FilterCollection implements Filter
 {
     private
@@ -25,5 +27,18 @@ class FilterCollection implements Filter
         }
 
         return $processList;
+    }
+
+    public function isFiltered(Process $process)
+    {
+        foreach($this->filters as $filter)
+        {
+            if($filter->isFiltered($process))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

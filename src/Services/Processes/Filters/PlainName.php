@@ -5,8 +5,7 @@ namespace Supervisorg\Services\Processes\Filters;
 use Supervisorg\Services\Processes\Filter;
 use Supervisorg\Domain\Process;
 
-// FIXME : add unit tests
-class Name implements Filter
+class PlainName implements Filter
 {
     private
         $filteredProcessNames;
@@ -34,7 +33,7 @@ class Name implements Filter
         return $processList;
     }
 
-    private function isFiltered(Process $process)
+    public function isFiltered(Process $process)
     {
         if(in_array($process->getName(), $this->filteredProcessNames))
         {

@@ -2,17 +2,21 @@
 
 namespace Supervisorg\Domain;
 
+use Supervisorg\Services\Processes\Filter;
+
 class LogicalGroup
 {
     private
         $name,
         $icon,
         $default,
-        $regex;
+        $regex,
+        $filter;
 
-    public function __construct($name, array $definition)
+    public function __construct($name, array $definition, Filter $filter)
     {
         $this->name = $name;
+        $this->filter = $filter;
 
         $definition = $this->ensureDefinitionIsValid($definition);
 
@@ -63,6 +67,11 @@ class LogicalGroup
 
     public function belongTo(Process $process, $value)
     {
+        if($this->filter->isFiltered($process))
+        {
+            return false;
+        }
+
         if($this->belongToAny($process))
         {
             return $this->getValue($process) === $value;
